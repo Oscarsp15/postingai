@@ -1,10 +1,14 @@
-from flask import Flask, render_template,redirect
+from flask import Flask, render_template,redirect,request, jsonify
 
 app = Flask(__name__)
 
-@app.route("/")
-def home():
-    return "<h1>AnimePostAI</h1><p>Bienvenido a la app de pruebas.</p>"
+@app.route("/", methods=["GET", "POST"])
+def handle_webhook():
+    if request.method == "POST":
+        data = request.get_json()
+        print("📩 Webhook recibido:", data)
+        return jsonify({"status": "Webhook recibido"}), 200
+    return "Webhook activo", 200
 
 @app.route("/terms")
 def terms():
