@@ -1,4 +1,4 @@
-from flask import Flask, render_template,send_file
+from flask import Flask, render_template,send_from_directory
 
 app = Flask(__name__)
 
@@ -14,9 +14,10 @@ def terms():
 def privacy():
     return render_template("privacy")
 
+
 @app.route("/tiktok-verification/")
-def tiktok_verification_file():
-    return send_file("static/tiktokrA8F27gchm0l2pg42SdnB0Cd2ZZP75cg.txt")
+def serve_verification_file():
+    return send_from_directory("static", "tiktokrA8F27gchm0l2pg42SdnB00Cd2ZZP75cg.txt")
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
