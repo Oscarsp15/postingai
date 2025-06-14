@@ -6,15 +6,15 @@ app = Flask(__name__)
 def home():
     return "<h1>AnimePostAI</h1><p>Bienvenido a la app de pruebas.</p>"
 
-@app.route("/terms.html")
+@app.route("/terms")
 def terms():
-    return render_template("terms.html")
+    return render_template("terms")
 
-@app.route("/privacy.html")
+@app.route("/privacy")
 def privacy():
-    return render_template("privacy.html")
+    return render_template("privacy")
 
-@app.route("/tiktok-verification.html")
+@app.route("/tiktok-verification")
 def tiktok_verification():
     return render_template("tiktok-verification.html")
 
