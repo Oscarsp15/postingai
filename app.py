@@ -14,7 +14,7 @@ def terms():
 def privacy():
     return render_template("privacy")
 
-@app.route("/tiktok-verification")
+@app.route("/tiktok-verification/")
 def tiktok_verification_file():
     return send_file("static/tiktokrA8F27gchm0l2pg42SdnB0Cd2ZZP75cg.txt")
 
